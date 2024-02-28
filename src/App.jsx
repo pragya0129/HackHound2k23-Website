@@ -42,7 +42,7 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <div className="navigation">
+      {/* <div className="navigation">
         <nav>
           <ul>
             <li>
@@ -59,7 +59,16 @@ function App() {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
+
+<div className="navigation">
+      <ul class="nav-links">
+    <li><a onClick={() => scrollToSection("home")}>Home</a></li>
+    <li class="center"><a onClick={() => scrollToSection("gallery")}>Gallery</a></li>
+    <li class="upward"><a onClick={() => scrollToSection("about")}>About</a></li>
+    <li class="forward"><a onClick={() => scrollToSection("contact")}>Contact</a></li>
+  </ul>
+  </div>
       <div className="container">
         <div className="top" id="home">
           <h1>
@@ -112,6 +121,7 @@ function App() {
           <SponsorCard image="Images/Untitled.png" alt="ETHINDIA LOGO" />
         </div>
         <br></br>
+        <hr></hr>
         <div id="gallery">
           <h2>HackHound 2k23 Flashback</h2>
           <RegistrationCounter />
@@ -141,6 +151,27 @@ function App() {
           <SponsorCard image="Images//interview-cake.jpg" />
           <SponsorCard image="Images//axure2644.jpg" />
         </div>
+        <div className="PastJudges">
+        <h2>Past Judges</h2>
+        <div className="cards">
+          <Card image="public\Images\Pawan Kumar.jpg" title="Pawan Kumar" description="Head of Engineering - Frontier || Founder - Codepur"/>
+          <Card image="public\Images\Shubham Jain.jpg" title="Shubham Jain" description="Flutter Engineer at Frontier"/>
+          <Card image="public\Images\Pranav Malik.jpg" title="Pranav Malik" description="SDE-2 at Microsoft || Ex - Oracle, Paypal"/>
+          <Card image="public\Images\Ramit Swawhney.jpg" title="Ramit Sawhney" description="Engineer Manager at Tower Research"/>
+        </div>
+
+        <h2>Past Mentors</h2>
+        <div className="cards">
+          <Card image="public\Images\Pooja Gera.jpg" title="Pooja Gera" description="SWE'23@PoloAltoNetworks || SWE Intern'22 Microsoft"/>
+          {/* <Card image="public\Images\Arijit Roy2.jpg" title="Arijit Roy" description="Backend & ML @Docsumo || 6x Hackathon Winner"/> */}
+          <Card image="public\Images\Srishti Gureja.jpg" title="Srishti Gureja" description="NLP+Differential Privacy @Translated || Ex: AI fellow at Pi school"/>
+          {/* <Card image="public\Images\Divyansh Gandhi.jpg" title="Divyansh Gandhi" description="Founder of Stimuli Technologies || Flutter Lead at LikeMinds"/> */}
+          <Card image="public\Images\Aastha.jpg" title="Aastha" description="Data Engineer @Fractal.ai"/>
+          <Card image="public\Images\Ishika Kesarwani.jpg" title="Ishika Kesarwani" description="Community Manager at Altogics || Github Campus Expert"/>
+        </div>
+        </div>
+
+        
         <br></br>
         <h2>Club Coordinator</h2>
         <div className="cards">

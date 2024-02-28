@@ -24,17 +24,12 @@ function SliderGallery({ images }) {
 
   return (
     <div className="slider-gallery">
-      <button onClick={prevImage} className="prev-btn">
-        Prev
-      </button>
+  
       <img
         src={images[currentImageIndex]}
         alt="Gallery"
         className="gallery-image"
       />
-      <button onClick={nextImage} className="next-btn">
-        Next
-      </button>
     </div>
   );
 }

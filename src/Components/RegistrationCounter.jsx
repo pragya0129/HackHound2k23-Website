@@ -11,7 +11,7 @@ function RegistrationCounter() {
     const interval = setInterval(() => {
       setCount((prevCount) => {
         const nextCount = prevCount + 5;
-        return nextCount > 1000 ? 0 : nextCount;
+        return nextCount > 1300 ? 0 : nextCount;
       });
     }, duration / steps);
 
@@ -23,7 +23,7 @@ function RegistrationCounter() {
       }, 5000);
     };
 
-    if (count >= 1000) {
+    if (count >= 1300) {
       resetInterval();
     }
 
@@ -33,7 +33,8 @@ function RegistrationCounter() {
   return (
     <div className="registration-counter">
       <span className="count">{count}</span>
-      <span> Registrations</span>
+      
+      <span><span>+</span>Registrations</span>
     </div>
   );
 }

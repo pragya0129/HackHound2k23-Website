@@ -6,11 +6,11 @@ function PrizeCounter() {
   useEffect(() => {
     const interval = setInterval(() => {
      
-      setCount((prevCount) => (prevCount >= 150000 ? 0 : prevCount + 500));
+      setCount((prevCount) => (prevCount >= 350000 ? 0 : prevCount + 500));
     }, 5); 
 
     
-    if (count >= 150000) {
+    if (count >= 350000) {
       clearInterval(interval);
       
       setTimeout(() => {
