@@ -4,12 +4,12 @@
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-  background: url("public/Images/bgabstract.jpg");
+  background: url("/Images/bgabstract.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: #00ffea;
   text-decoration: inherit;
 }
 a:hover {
@@ -60,11 +60,11 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #ffffff;
-    background: url("public/Images/bgabstract.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background: url("/Images/bgabstract.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   a:hover {
     color: #8187fc;
