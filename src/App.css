@@ -49,7 +49,7 @@ h2 {
   padding: 10px 0;
 }
 
-.navigation {
+/* .navigation {
   position: fixed;
   top: 0;
   width: 95%;
@@ -58,16 +58,16 @@ h2 {
   margin-left: 2%;
   margin-right: 2%;
   z-index: 1000;
-}
+} */
 
 .showhide {
   opacity: 0;
 }
 
-.navigation img {
+/* .navigation img {
   max-width: 35px;
   border-radius: 50%;
-}
+} */
 
 .registration-counter {
   font-weight: bold;
@@ -83,8 +83,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
   flex-direction: column;
-  background: url("/Images/video.gif");
+  background: url("/Images/gif\ logo\ hackhound\ \(1920\ x\ 890\ px\).gif");
   background-repeat: no-repeat;
   height: 100%;
   background-size: cover;
@@ -251,7 +252,7 @@ nav li a:hover {
   color: black;
 } */
 
-.nav-links {
+/* .nav-links {
   display: flex;
   background: #000000;
   opacity: 100%;
@@ -308,7 +309,104 @@ nav li a:hover {
 .nav-links li.forward a:hover:before {
   transform: scaleX(1);
   transform-origin: left;
+} */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s; /* Smooth transition for moving up and down */
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.logo img {
+  width: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  padding: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3rem;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s; /* Smooth transition for moving up and down */
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%; /* Keep it full width for proper alignment */
+    display: none; /* Initially hidden */
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the items */
+    justify-content: center;
+    position: absolute;
+    top: 70px; /* Adjust based on the actual height of your navbar */
+    left: 0;
+    right: 0; /* This ensures it takes the full width */
+    background-color: #000000; /* Keep the background consistent */
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .menu-icon {
+    display: inline-block; /* Ensure the icon is always visible */
+  }
+}
+
 .social-button {
   width: 40px;
   height: 40px;
@@ -515,15 +613,47 @@ footer {
   justify-content: space-between;
 }
 
+.btn {
+  margin: 10px;
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove default underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  color: white;
+}
+
+.btn-img {
+  width: 20px; /* Adjust image size as needed */
+  height: 20px;
+  vertical-align: middle; /* Align image vertically with text */
+  margin-right: 5px; /* Add some space between image and text */
+}
+
+.btn-text {
+  vertical-align: middle; /* Align text vertically with image */
+}
+
 .map-container,
 .text-container {
   flex-basis: 100%;
   margin-bottom: 20px;
 }
 
-.map-container iframe {
+.loc {
+  width: 30px;
+}
+
+.map-container img {
   width: 100%;
   height: 300px;
+  border-radius: 20px;
   border: 0;
 }
 
@@ -692,7 +822,25 @@ footer {
     text-decoration: none;
   }
 
+  #gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Align text center */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  #gallery > * {
+    margin: 10px 0; /* Add margin between elements */
+  }
+
   .navigation img {
     max-width: 30px;
+  }
+
+  .top {
+    background-position: center; /* Ensures the background is centered */
+    background: url("/Images/gif1.gif");
   }
 }

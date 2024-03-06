@@ -4,16 +4,87 @@ import SponsorCard from "./Components/SponsorCard";
 import Countdown from "./Components/Countdown";
 import Card from "./Components/Card";
 import Footer from "./Components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "./Pages/Gallery";
 import Contacts from "./Pages/Contacts";
 import About from "./Pages/About";
 import RegistrationCounter from "./Components/RegistrationCounter";
 import PrizeCounter from "./Components/PrizeCounter";
 import Card2 from "./Components/Card2";
-import ProjectCarousel from "./Components/ProjectCarousel";
 
 function App() {
+  const images = [
+    "/public/Images/hackhound 2k23 photos/IMG1.jpg",
+    "/public/Images/hackhound 2k23 photos/IMG1.jpg",
+    "/public/Images/hackhound 2k23 photos/IMG1.jpg",
+    "/public/Images/hackhound 2k23 photos/IMG1.jpg",
+    "/public/Images/hackhound 2k23 photos/IMG1.jpg",
+  ];
+
+  let lastScrollTop = 0; // This variable will hold the last scroll position
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      // Check if the viewport width is larger than a certain threshold (e.g., 768px for tablets/desktops)
+      if (window.innerWidth >= 768) {
+        let currentScroll =
+          window.scrollY || document.documentElement.scrollTop;
+
+        // Compare the current scroll position to the last known scroll position
+        if (currentScroll > lastScrollTop) {
+          // Scrolling DOWN
+          document.querySelector("nav").style.top = "-70px"; // Adjust this value based on your navbar's height
+        } else {
+          // Scrolling UP
+          document.querySelector("nav").style.top = "0";
+        }
+
+        // Update lastScrollTop to the current scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      } else {
+        // Reset the navbar position on smaller devices
+        document.querySelector("nav").style.top = "0";
+      }
+    },
+    false
+  );
+
+  const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <nav className="navbar">
+        <div className="logo">
+          <img src="/Images/file_2024-02-28_15.06.46.png"></img>
+        </div>
+        <button className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <FontAwesomeIcon icon={faTimes} />
+          ) : (
+            <FontAwesomeIcon icon={faBars} />
+          )}
+        </button>
+        <ul className={isOpen ? "nav-links open" : "nav-links"}>
+          <li>
+            <a onClick={() => scrollToSection("home")}>Home</a>
+          </li>
+          <li className="center">
+            <a onClick={() => scrollToSection("gallery")}>Gallery</a>
+          </li>
+          <li className="upward">
+            <a onClick={() => scrollToSection("about")}>About</a>
+          </li>
+          <li className="forward">
+            <a onClick={() => scrollToSection("contact")}>Contact</a>
+          </li>
+        </ul>
+      </nav>
+    );
+  };
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://apply.devfolio.co/v2/sdk.js";
@@ -44,6 +115,7 @@ function App() {
   // }, []);
   return (
     <div className="App">
+      <Navbar />
       {/* <div className="navigation">
         <nav>
           <ul>
@@ -63,7 +135,7 @@ function App() {
         </nav>
       </div> */}
 
-      <div className="navigation">
+      {/* <div className="navigation">
         <ul className="nav-links">
           <li>
             <img src="Images/file_2024-02-28_15.06.46.png"></img>
@@ -81,7 +153,7 @@ function App() {
             <a onClick={() => scrollToSection("contact")}>Contact</a>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="container">
         <div className="top" id="home">
           <br className="showhide"></br>
@@ -162,13 +234,12 @@ function App() {
 
         <br></br>
         <hr></hr>
-        <div id="gallery">
+        <div className="gallery" id="gallery">
           <h2>HackHound 2k23 Flashback</h2>
           <RegistrationCounter />
           <PrizeCounter />
           <h4>Recalling Moments of Inspiration</h4>
           <Gallery />
-          {/* <ProjectCarousel /> */}
         </div>
 
         {/* <section className="register-btn">
