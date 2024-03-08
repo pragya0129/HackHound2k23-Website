@@ -26,7 +26,7 @@ function Footer() {
             className="btn"
           >
             <img
-              src="/Images/placeholder.png"
+              src="Images/placeholder.png"
               className="btn-img"
               alt="Google Maps"
             ></img>
