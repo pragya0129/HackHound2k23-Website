@@ -58,7 +58,7 @@ function App() {
     return (
       <nav className="navbar">
         <div className="logo">
-          <img src="/Images/file_2024-02-28_15.06.46.png"></img>
+          <img src="Images/hackhoundlogowhite.png"></img>
         </div>
         <button className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
